@@ -78,6 +78,7 @@ public class ProductServiceTests {
         Mockito.doNothing().when(repository).deleteById(existingId);
         Mockito.doThrow(DataIntegrityViolationException.class).when(repository).deleteById(dependentId);
     }
+    @Test
     public void updateShouldThrowResourceNotFoundExceptionWhenIdDoesNotExists(){
 
         Assertions.assertThrows(ResourceNotFoundException.class, () -> {
